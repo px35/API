@@ -29,6 +29,29 @@ app.get('/multiple', function(req, res) {
   });
 });
  
+// Ecart entre 2 dates
+// Requesting /countdown/post?futureDate=2022-12-18
+app.get('/countdown/post', function(req, res) {
+  var dDatefin = new Date(req.query.futureDate); // 2022-12-18
+  var dDatejour = Date.now();
+  var Difference_In_Time = dDatefin.getTime() - dDatejour.getTime();
+  var smonth = Math.round(Difference_In_Time / (1000 * 3600 * 24 * 30));
+  var sday = Math.round(Difference_In_Time / (1000 * 3600 * 24));
+  var shour = Math.round(Difference_In_Time / (1000 * 3600));
+  var sminute = Math.round(Difference_In_Time / (1000 * 60));
+  var ssecond = Math.round(Difference_In_Time / 1000);
+  res.json({
+    futureDate: dDatefin,
+	timeUntil: 'commentaire',
+    yearsUntil: '???',
+    monthsUntil: smonth,
+    daysUntil: sday,
+    hoursUntil: shour,
+    minutesUntil: sminute,
+    secondsUntil: ssecond
+  });
+});
+
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
