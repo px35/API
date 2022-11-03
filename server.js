@@ -51,8 +51,8 @@ app.get('/countdown/post', function(req, res) {
     minutesUntil: sminute,
     secondsUntil: ssecond
   };
-  var jsonContent = JSON.stringify(jsonRep);
-  res.json(jsonContent);
+  //var jsonContent = JSON.stringify(jsonRep);
+  res.json(jsonRep);
 });
 
 // Start the server
