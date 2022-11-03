@@ -34,7 +34,8 @@ app.get('/multiple', function(req, res) {
 app.get('/countdown/post', function(req, res) {
   var dDatefin = new Date(req.query.futureDate); // 2022-12-18
   var dDatejour = Date.now();
-  var Difference_In_Time = dDatefin.getTime() - dDatejour.getTime();
+  //var Difference_In_Time = dDatefin.getTime() - dDatejour.getTime();
+  var Difference_In_Time = Math.abs(dDatefin - dDatejour);
   var smonth = Math.round(Difference_In_Time / (1000 * 3600 * 24 * 30));
   var sday = Math.round(Difference_In_Time / (1000 * 3600 * 24));
   var shour = Math.round(Difference_In_Time / (1000 * 3600));
