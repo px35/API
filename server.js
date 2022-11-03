@@ -40,7 +40,6 @@ app.get('/countdown/post', function(req, res) {
   var shour = Math.round(Difference_In_Time / (1000 * 3600));
   var sminute = Math.round(Difference_In_Time / (1000 * 60));
   var ssecond = Math.round(Difference_In_Time / 1000);
-  console.log("smonth=" + smonth);
   var jsonRep = {
     futureDate: dDatefin,
 	timeUntil: 'commentaire',
@@ -51,8 +50,9 @@ app.get('/countdown/post', function(req, res) {
     minutesUntil: sminute,
     secondsUntil: ssecond
   };
-  //var jsonContent = JSON.stringify(jsonRep);
-  res.json(jsonRep);
+  var jsonContent = JSON.stringify(jsonRep);
+  console.log("jsonContent=" + jsonContent);
+  res.send(jsonRep);
 });
 
 // Start the server
