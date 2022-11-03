@@ -41,6 +41,7 @@ app.get('/countdown/post', function(req, res) {
   var shour = Math.round(Difference_In_Time / (1000 * 3600));
   var sminute = Math.round(Difference_In_Time / (1000 * 60));
   var ssecond = Math.round(Difference_In_Time / 1000);
+  console.log("smonth=" + smonth);
   res.json({
     futureDate: dDatefin,
 	timeUntil: 'commentaire',
