@@ -41,14 +41,16 @@ app.get('/countdown/post', function(req, res) {
   var sminute = Math.round(Difference_In_Time / (1000 * 60));
   var ssecond = Math.round(Difference_In_Time / 1000);
   var jsonRep = {
-    futureDate: dDatefin,
-	timeUntil: 'commentaire',
-    yearsUntil: '???',
-    monthsUntil: smonth,
-    daysUntil: sday,
-    hoursUntil: shour,
-    minutesUntil: sminute,
-    secondsUntil: ssecond
+    set_attributes: {
+		futureDate: dDatefin,
+		timeUntil: 'commentaire',
+		yearsUntil: '???',
+		monthsUntil: smonth,
+		daysUntil: sday,
+		hoursUntil: shour,
+		minutesUntil: sminute,
+		secondsUntil: ssecond
+	}
   };
   var jsonContent = JSON.stringify(jsonRep);
   console.log("jsonContent=" + jsonContent);
