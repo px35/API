@@ -18,6 +18,16 @@ app.get('/', (req, res) => {
     .send('Hello server is running')
     .end();
 });
+
+
+// Defining get request at '/multiple' route
+app.get('/multiple', function(req, res) {
+  res.json({
+    number: 1,
+    name: 'John',
+    gender: 'male'
+  });
+});
  
 // Start the server
 const PORT = process.env.PORT || 8080;
