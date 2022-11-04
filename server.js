@@ -69,7 +69,7 @@ app.get('/countdown/post', function(req, res) {
 });
 
 // Tri d'une structure JSON
-app.get('/tri', function(req, res) {
+app.post('/tri', function(req, res) {
   console.log("Msg entree=" + JSON.stringify(req.body));
   var items = req.body;
   var input = JSON.parse(req.body.input);
