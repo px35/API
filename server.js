@@ -72,6 +72,8 @@ app.get('/countdown/post', function(req, res) {
 app.get('/tri', function(req, res) {
   console.log("Msg entree=" + JSON.stringify(req.body));
   var items = req.body;
+  var input = JSON.parse(req.body.input);
+  console.log("input=" + input);
   //items.sort(sortByProperty("id"));
   //console.log("Tab trie=" + sortJsonArray(items, 'id'));
   res.send(items);
