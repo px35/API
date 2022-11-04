@@ -11,7 +11,18 @@
 
 const express = require('express');
 const app = express();
- 
+
+function sortByProperty(property){  
+   return function(a,b){  
+      if(a[property] > b[property])  
+         return 1;  
+      else if(a[property] < b[property])  
+         return -1;  
+  
+      return 0;  
+   }  
+}
+
 app.get('/', (req, res) => {
   res
     .status(200)
@@ -55,6 +66,14 @@ app.get('/countdown/post', function(req, res) {
   var jsonContent = JSON.stringify(jsonRep);
   console.log("jsonContent=" + jsonContent);
   res.send(jsonRep);
+});
+
+// Tri d'une structure JSON
+app.get('/tri', function(req, res) {
+  console.log(req.body);
+  var items = req.body;
+  items.sort(sortByProperty("id"));
+  response.send(items);
 });
 
 // Start the server
