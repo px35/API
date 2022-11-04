@@ -66,7 +66,7 @@ app.get('/countdown/post', function(req, res) {
 app.post('/tri', function(req, res) {
   var items = req.body;
   console.log("Msg entree=" + items);
-  var input = JSON.parse(req.body);
+  //var input = JSON.parse(req.body);
   console.log("input=" + input);
   //items.sort(sortByProperty("id"));
   //console.log("Tab trie=" + sortJsonArray(items, 'id'));
