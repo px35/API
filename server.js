@@ -9,6 +9,10 @@
 
 // console.log("Server currently listening...");
 
+
+//npm install sort-json-array
+sortJsonArray = require('sort-json-array');
+
 const express = require('express');
 const app = express();
 
@@ -70,9 +74,10 @@ app.get('/countdown/post', function(req, res) {
 
 // Tri d'une structure JSON
 app.get('/tri', function(req, res) {
-  console.log(req.body);
+  console.log("Msg entree=" + JSON.stringify(req.body));
   var items = req.body;
-  items.sort(sortByProperty("id"));
+  //items.sort(sortByProperty("id"));
+  console.log("Tab trie=" + sortJsonArray(items, 'id'));
   response.send(items);
 });
 
