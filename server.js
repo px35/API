@@ -12,16 +12,10 @@
 const express = require('express');
 const app = express();
 
-function sortByProperty(property){  
-   return function(a,b){  
-      if(a[property] > b[property])  
-         return 1;  
-      else if(a[property] < b[property])  
-         return -1;  
-  
-      return 0;  
-   }  
-}
+// parse JSON
+app.use(express.json());
+// parse URL encoded data
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   res
