@@ -74,7 +74,7 @@ app.get('/tri', function(req, res) {
   var items = req.body;
   //items.sort(sortByProperty("id"));
   //console.log("Tab trie=" + sortJsonArray(items, 'id'));
-  response.send(items);
+  res.send(items);
 });
 
 // Start the server
