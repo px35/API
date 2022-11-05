@@ -69,7 +69,7 @@ app.post('/tri', function(req, res) {
   console.log("Msg entree (stringify)=" + JSON.stringify(items));
   var input = JSON.parse(JSON.stringify(req.body));
   console.log("input[0].title=" + input[0].title);
-  //items.sort(sortByProperty("id"));
+  console.log("input[1].title=" + input[1].title);
   //console.log("Tab trie=" + sortJsonArray(items, 'id'));
   res.send(items);
 });
