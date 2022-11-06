@@ -65,14 +65,16 @@ app.get('/countdown/post', function(req, res) {
 // Tri d'une structure JSON
 app.post('/tri', function(req, res) {
   var items = req.body; // JSON
-  var sortItems = items.sort();
+  items.sort(function(a, b) {
+  return a.id - b.id;
+	});
   console.log("Msg entree=" + items);
   console.log("Msg entree (stringify)=" + JSON.stringify(items));
   var input = JSON.parse(JSON.stringify(req.body)); // OBJECT
   console.log("input[0].title=" + input[0].title);
   console.log("input[1].title=" + input[1].title);
   //console.log("Tab trie=" + sortJsonArray(items, 'id'));
-  res.send(sortItems);
+  res.send(items);
 });
 
 // Start the server
